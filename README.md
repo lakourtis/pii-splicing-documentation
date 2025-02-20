@@ -19,17 +19,18 @@ We are seeking to collate research and documentation of existing text de-identif
 
 ## Existing Text De-identification Tools
 
-| Name |  Type | PDF |
-| - | - | - |
-| [A unified framework for evaluating the risk of re-identification of text de-identification tools](https://www.sciencedirect.com/science/article/pii/S1532046416300697) | Existing Tools | [PDF](existing_tools/1-s2.0-S0885230824001293-main.pdf) |
-| [An Extensible Evaluation Framework Applied to Clinical Text Deidentification Natural Language Processing Tools: Multisystem and Multicorpus Study](https://pubmed.ncbi.nlm.nih.gov/38805692/) ([GitHub](https://codeberg.org/HeiderLab/ots-deidentification))| Existing Tools | [PDF](existing_tools/jmir-2024-1-e55676.pdf) |
-[You Are What You Write: Author re-identification privacy attacks in the era of pre-trained language models](https://www.sciencedirect.com/science/article/pii/S0885230824001293) | Existing Tools | [PDF](existing_tools/re-id-privacy-attacks.pdf) |
-[DeIDClinic: A Multi-Layered Framework for De-identification of Clinical Free-text Data](https://arxiv.org/abs/2410.01648) | Existing Tools | [PDF] (existing_tools/2410.01648v1.pdf) |
+| Name | Type | PDF |  Year |
+| - | - | - | - |
+| [A unified framework for evaluating the risk of re-identification of text de-identification tools](https://www.sciencedirect.com/science/article/pii/S1532046416300697) | Existing Tools | [PDF](existing_tools/1-s2.0-S0885230824001293-main.pdf) | 2016 |
+| [An Extensible Evaluation Framework Applied to Clinical Text Deidentification Natural Language Processing Tools: Multisystem and Multicorpus Study](https://pubmed.ncbi.nlm.nih.gov/38805692/) ([GitHub](https://codeberg.org/HeiderLab/ots-deidentification))| Existing Tools | [PDF](existing_tools/jmir-2024-1-e55676.pdf) | 2024 |
+[You Are What You Write: Author re-identification privacy attacks in the era of pre-trained language models](https://www.sciencedirect.com/science/article/pii/S0885230824001293) | Existing Tools | [PDF](existing_tools/re-id-privacy-attacks.pdf) | 2025 |
+[DeIDClinic: A Multi-Layered Framework for De-identification of Clinical Free-text Data](https://arxiv.org/abs/2410.01648) | Existing Tools | [PDF](existing_tools/2410.01648v1.pdf) | 2024 |
+| [Enhancing the De-identification of Personally Identifiable Information in Educational Data](https://arxiv.org/html/2501.09765v1) | Existing tools | [PDF](existing_tools/2501.09765v1.pdf) | 2025 |
 
 ## Metrics
-| Name | Type | PDF |
-| - | - | - |
-| [Analyzing Leakage of Personally Identifiable Information in Language Models](https://arxiv.org/pdf/2302.00539) | Metric | [PDF] (existing_tools/2302.00539v4.pdf) |
+| Name | Type | PDF | Year | 
+| - | - | - | - |
+| [Analyzing Leakage of Personally Identifiable Information in Language Models](https://arxiv.org/pdf/2302.00539), especially PII reconstruction/inference | Metric | [PDF] (existing_tools/2302.00539v4.pdf) | 2023 |
 
 ## MRI De-identification
 
