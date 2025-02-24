@@ -7,6 +7,12 @@ We are seeking to collate research and documentation of existing text de-identif
     - False Negative Rate (FNR): PII incorrectly identified as non-PII ("PII Miss Rate")
     - False Positive Rate (FPR): Non-PII incorrectly identified as PII ("Overshoot Rate")
     - Some may have differing thresholds for both FNR and FPR. For example, one may prefer a model with a low FNR and they may be okay with a higher FPR.
+- Which performance thresholds should we be aiming for?
+    - This [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#S10) in the Discussion section suggests 95% as a threshold. Their [Table 6](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#T6) shows that several teams reach that threshold when considering HIPAA-PHI categories with token-based evaluation.
+    - The paper makes a distinction between entity-based and token-based evaluation in the [Evaluation](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#S6) section.
+        - Entity-based requires that the PHI is exactly matched, as well as its tag name and type.
+        - Token-based is more liberal and only requires that all the parts that are PHI are identified in some fashion.
+        - Token-based could be more appropriate, since the removal of the PHI and not the categorization is a higher priority.
 - Can we define and/or quantify how identifying a piece of information is?
     - [Direct and quasi-identifiers.](https://www.sciencedirect.com/science/article/pii/S1532046416300697)
 - How can we simulate a real-world attack / attempt of re-identification?
