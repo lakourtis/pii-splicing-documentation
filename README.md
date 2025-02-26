@@ -16,7 +16,7 @@ We are seeking to collate research and documentation of existing text de-identif
 - Can we define and/or quantify how identifying a piece of information is?
     - [Direct and quasi-identifiers.](https://www.sciencedirect.com/science/article/pii/S1532046416300697)
 - How can we simulate a real-world attack / attempt of re-identification?
-    - ["Beyond Memorization: Violating Privacy Via Inference with Large Language Models"](https://arxiv.org/abs/2310.07298) uses GPT-4 to predict personal attributes (age, place of birth, etc.) from users' Reddit comments, achieving 85% accuracy. The dataset created for this task is not publicly released.
+    - [Beyond Memorization: Violating Privacy Via Inference with Large Language Models](https://arxiv.org/abs/2310.07298) uses GPT-4 to predict personal attributes (age, place of birth, etc.) from users' Reddit comments, achieving 85% accuracy. The dataset created for this task is not publicly released.
     - The previous group has released [a synthetic dataset](https://arxiv.org/abs/2406.07217) that can be used to evaluate LLMs on predicting personal attributes.
     - Insipired by these works, one potential method for evaluating our PII splicing beyond token-level PII is to compare the accuracy of predicting personal attributes of subjects before and after PII splicing. Reduced accuracy after splicing may indicate that PII splicing has successfully removed contextual PII.
 - Should we distinguish open-set vs. closed-set identification?
@@ -28,9 +28,13 @@ We are seeking to collate research and documentation of existing text de-identif
 - How should older, rule-based methods and masked language models (e.g. BERT) be used alongside or in lieu of modern LLMs such as GPT and Llama?
     - The tools reviewed in this [survey paper](https://www.semanticscholar.org/paper/De-identification-of-clinical-free-text-using-A-of-Kovacevic-Ba%C5%A1aragin/4dd2f02fbec030ed73aabbb556317a24f1013585?utm_source=direct_link)--which use rules, BERT-type models, or other machine learning methods--achieve over 95% F1-score on de-identification.
     - [DeIDClinic: A Multi-Layered Framework for De-identification of Clinical Free-text Data](https://arxiv.org/abs/2410.01648) is a hybrid system combining a fine-tuned BERT model with rules, achieving 0.9732 F1-score.
-    - ["Few-shot clinical entity recognition in English, French and Spanish:
-masked language models outperform generative model prompting"](https://arxiv.org/pdf/2402.12801) compares BERT-type models with generative LLMs in named entity recognition tasks and finds that BERT-type models outperform LLMs while using significantly less compute resources. However, it concludes that language models are still not accurate enough for reliable annotation.
-
+    - [Few-shot clinical entity recognition in English, French and Spanish:
+masked language models outperform generative model prompting](https://arxiv.org/pdf/2402.12801) compares BERT-type models with generative LLMs in named entity recognition tasks and finds that BERT-type models outperform LLMs while using significantly less compute resources.
+- How can we improve generative LLM performance?
+    - Change from no-shot to one- or few-shot (prompt with example deidentifications)
+    - Change output format. Potentially remove JSON output restriction and ask model to simply list outputs or classify inline
+    - Explicit chain of thought
+    - Chain of verification
 
 ## Existing Text De-identification Tools
 
@@ -41,6 +45,8 @@ masked language models outperform generative model prompting"](https://arxiv.org
 [You Are What You Write: Author re-identification privacy attacks in the era of pre-trained language models](https://www.sciencedirect.com/science/article/pii/S0885230824001293) | Existing Tools | [PDF](existing_tools/re-id-privacy-attacks.pdf) | 2025 |
 [DeIDClinic: A Multi-Layered Framework for De-identification of Clinical Free-text Data](https://arxiv.org/abs/2410.01648) | Existing Tools | [PDF](existing_tools/2410.01648v1.pdf) | 2024 |
 | [Enhancing the De-identification of Personally Identifiable Information in Educational Data](https://arxiv.org/html/2501.09765v1) | Existing tools | [PDF](existing_tools/2501.09765v1.pdf) | 2025 |
+| [Benchmarking Modern Named Entity Recognition Techniques for Free-text Health Record Deidentification](https://pmc.ncbi.nlm.nih.gov/articles/PMC8378656) | Existing Tools | 2021 |
+| [From zero to hero: Harnessing transformers for biomedical named entity recognition in zero- and few-shot contexts](https://www.sciencedirect.com/science/article/abs/pii/S0933365724002124) | Existing Tools | 2024 |
 
 ## Metrics
 | Name | Type | PDF | Year | 
