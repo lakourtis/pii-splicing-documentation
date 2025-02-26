@@ -2,6 +2,29 @@
 
 We are seeking to collate research and documentation of existing text de-identification tools to understand the the current landscape. We are also collecting information about de-identification in the context of other data modalities, in the hopes of applying similar principles to text de-identification.
 
+## Definitions
+P: number of PII elements in a given text
+
+N: number of non-PII elements in a given text
+
+TP: PII elements correctly identified as PII
+
+FP: non-PII elements incorrectly identifies as PII
+
+TN: non-PII elements correctly identified as non-PII
+
+FN: PII elements incorrectly identified as non-PII
+
+We should calculate across multiple benchmarking texts
+
+**Sensitivity = TP/P which should be as close as possible to 1 (FNR close to 0)**
+
+**Specificity = TN/N should be as high as possible but can be sacrificed for higher Sensitivity**
+
+Note: Due to the high imbalance, TP/P is going to be a number very close to 1 anyways so we may want to use log(1-TP/P) = log(FNR) instead.
+
+Due to the nature of the PII splicing program, we prioritize sensitivity, not specificity
+
 ## Research Questions
 - Which metrics are most critical for de-identification?
     - False Negative Rate (FNR): PII incorrectly identified as non-PII ("PII Miss Rate")
