@@ -15,21 +15,33 @@ TN: non-PII elements correctly identified as non-PII
 
 FN: PII elements incorrectly identified as non-PII
 
-We should calculate across multiple benchmarking texts
-
-**Sensitivity = TP/P which should be as close as possible to 1 (FNR close to 0)**
+**Sensitivity = TP/P which should be as close as possible to 1**
 
 **Specificity = TN/N should be as high as possible but can be sacrificed for higher Sensitivity**
 
-Note: Due to the high imbalance, TP/P is going to be a number very close to 1 anyways so we may want to use log(1-TP/P) = log(FNR) instead.
+**False Negative Rate (FNR): PII incorrectly identified as non-PII ("PII Miss Rate")**
 
-Due to the nature of the PII splicing program, we prioritize sensitivity, not specificity
+**False Positive Rate (FPR): Non-PII incorrectly identified as PII ("Overshoot Rate")**
+
+A typical confusion matrix for a given text analyzed looks like this
+
+|   | Predicted PII | Predicted non-PII |
+| --- | --- | --- |
+|Actual PII | 1.44%  | 0.96% |
+|Actual non-PII | 1.44%  | 96.17% |
+
+In more detail, the analysis yields
+
+| Metric | Value | Explanation |
+| --- | --- | --- |
+| PPV | 50.00% | Correct PII Rate |
+| NPV | 99.01% | Correct Non-PII Rate |
+| **FPR** | 1.47% | **Overshoot Rate** |
+| **FNR** | 40.00% | **PII Miss Rate** |
+
+Some may have differing thresholds for both FNR and FPR. For example, one may prefer a model with a low FNR and they may be okay with a higher FPR.
 
 ## Research Questions
-- Which metrics are most critical for de-identification?
-    - False Negative Rate (FNR): PII incorrectly identified as non-PII ("PII Miss Rate")
-    - False Positive Rate (FPR): Non-PII incorrectly identified as PII ("Overshoot Rate")
-    - Some may have differing thresholds for both FNR and FPR. For example, one may prefer a model with a low FNR and they may be okay with a higher FPR.
 - Which performance thresholds should we be aiming for?
     - This [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#S10) in the Discussion section suggests 95% as a threshold. Their [Table 6](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#T6) shows that several teams reach that threshold when considering HIPAA-PHI categories with token-based evaluation.
     - The paper makes a distinction between entity-based and token-based evaluation in the [Evaluation](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#S6) section.
