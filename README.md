@@ -41,6 +41,44 @@ In more detail, the analysis yields
 
 Some may have differing thresholds for both FNR and FPR. For example, one may prefer a model with a low FNR and they may be okay with a higher FPR.
 
+## Methods
+
+**A.** An LLM is instructed to identify Personal Identifying Information. The PII entity types and their [significance] are: 
+
+1. **Last names**: Full names or Last names [HIGH]
+
+2. **Addresses**: Physical addresses (numbers and street names and ZIP code) [HIGH]
+
+3. **Birth Date and Location**: Age, Date and Place of Birth [HIGH]
+
+4. **Email Addresses, Social Media Account Names, Usernames, IP Address** [HIGH]
+
+5. **Identification Numbers**: Social Security, Employer Identification, Driver's License, Passport, Vehicle Registration, Membership Numbers [HIGH]
+
+6. **Financial Account Data**: Bank account Numbers, Credit/Debit Card Numbers [HIGH]
+
+7. **Employment and Education information**: Job Title, Employer Name, Employee ID, Academic Institution or School attending/attended, Degree earned, School ID [HIGH]
+
+8. **Medical Information**: Health Insurance ID, Provider/Hospital Name, Medical History [MEDIUM]
+
+9. **Demographics**: Ethnicity, Race, Religious Affiliation, Gender Identity [MEDIUM] 
+
+10. **Locations**: Specific locations including cities, towns, landmarks, geographical sites *(mountains, lakes, rivers etc, plains, creeks, beaches)* [MEDIUM]
+
+11. **Organizations**: Officially registered or widely recognized entities, for example *Microsoft, or Boston University* [MEDIUM]
+
+12. **Unique achievements**: Must be specific, verifiable accomplishments, for example *Winning a Medal in a Race, Climbing a Mountain that few do.*  [MEDIUM]
+
+13. **Unique personal traits, features, characteristics**: Must be specific for example *a special tatoo, a birthmark* [LOW] 
+                    
+14. **Events**: Must be official, named events for example *the 2021 MET Gala, the 2024 Superbowl* [LOW]
+
+
+**B.** Once a list of PII has been identified, and for each element, the engine should interogate if said element could be used to identify someone within a 10000 people pool. For example, *a mention to New York, NY does not satisfy this condition, whereas a mention to Stockbridge, MA does satisfy this condition.*
+
+asda
+
+
 ## Research Questions
 - Which performance thresholds should we be aiming for?
     - This [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#S10) in the Discussion section suggests 95% as a threshold. Their [Table 6](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989908/#T6) shows that several teams reach that threshold when considering HIPAA-PHI categories with token-based evaluation.
