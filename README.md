@@ -31,6 +31,7 @@ We are seeking to collate research and documentation of existing text de-identif
     - [Few-shot clinical entity recognition in English, French and Spanish:
 masked language models outperform generative model prompting](https://arxiv.org/pdf/2402.12801) compares BERT-type models with generative LLMs in named entity recognition tasks and finds that BERT-type models outperform LLMs while using significantly less compute resources.
 - How can we improve generative LLM performance?
+    - Prompt examples: [1](https://arxiv.org/pdf/2402.12801), [2](https://arxiv.org/html/2501.09765v1)
     - Change from no-shot to one- or few-shot (prompt with example deidentifications)
     - Change output format. Potentially remove JSON output restriction and ask model to simply list outputs or classify inline
     - Explicit chain of thought
