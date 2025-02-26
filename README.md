@@ -2,6 +2,8 @@
 
 We are seeking to collate research and documentation of existing text de-identification tools to understand the the current landscape. We are also collecting information about de-identification in the context of other data modalities, in the hopes of applying similar principles to text de-identification.
 
+Currently exploring: LLM prompting improvements with few-shot prompting
+
 ## Research Questions
 - Which metrics are most critical for de-identification?
     - False Negative Rate (FNR): PII incorrectly identified as non-PII ("PII Miss Rate")
