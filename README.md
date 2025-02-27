@@ -82,7 +82,7 @@ The significance (HIGH, MEDIUM, LOW) represents the risk of identifying someone 
 -LOW means that the information provided alone cannot be used to identify someone, however, in combination with other information in the text and archived information elsewhere, it can significantly increase the identification risk probability to less than 1:10000.   
 
 
-**B.** Once a list of PII has been identified, and for each element, the engine should interogate if said element could be used to identify someone within a 10000 people pool. For example, *a mention to New York, NY does not satisfy this condition, whereas a mention to Stockbridge, MA does satisfy this condition.*
+**B.** Once a list of PII has been identified, and for each element, the engine should interogate if said element could be used to identify someone within a 10000 people pool. For example, *a mention to someone living in New York, NY does not satisfy this condition, whereas a mention to someone living in Stockbridge, MA does satisfy this condition.*
 
 
 ## Specifications
