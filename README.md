@@ -7,7 +7,8 @@
 	Filename (default), Folder
 
 **-What to redact**
-	Default Categories (always on): Last Name, Address Physical and Electronic, ID Number 
+	Default Categories (always on): Last Name, Address Physical and Electronic, Any ID Number 
+ 
 Optional Categories (additional selections): First Name, Organization, Location, Unique Characteristic, Achievement, Event
 
 **-Redaction Model**
