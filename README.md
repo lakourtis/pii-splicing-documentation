@@ -1,3 +1,36 @@
+# PII Splicing Arguments
+
+**-File(s) to redact**
+	Single File (default), Folder
+
+**-Output File(s)**
+	Filename (default), Folder
+
+**-What to redact**
+	Default Categories (always on): Last Name, Address Physical and Electronic, ID Number 
+Optional Categories (additional selections): First Name, Organization, Location, Unique Characteristic, Achievement, Event
+
+**-Redaction Model**
+   llama 3.2 (default), deepseek R1, GPT-4
+
+**-Redaction Tolerance**
+	10000 (default), custom value integer in powers of 10
+
+**-Known Identity**
+	Off (default), Description string
+
+**-Verification**
+	Off (default), On [Reverse lookup]
+
+**-What to replace with**
+	PII Category (Default), Custom Annotation String
+
+**-Output report**
+	JSON, HTML full report  
+ 
+
+
+
 # PII Splicing Documentation
 
 We are seeking to collate research and documentation of existing text de-identification tools to understand the the current landscape. We are also collecting information about de-identification in the context of other data modalities, in the hopes of applying similar principles to text de-identification.
